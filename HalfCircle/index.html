@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+path {
+  stroke: #fff;
+  fill-rule: evenodd;
+}
+.text {
+    fill: "red";
+    stoke:#666;
+    font-size: "20px";
+}
+
+.circle {
+  fill: #fff;
+  stroke: #000;
+  /*stroke-dasharray: 1,4;*/
+}
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.node .selected {
+  stroke: red;
+}
+
+/*.brush .extent {
+  fill-opacity: .1;
+  stroke: #fff;
+  shape-rendering: crispEdges;
+} */
+
+.rect {
+    fill: none;
+    pointer-events: all;
+}
+
+</style>
+<body>
+<!--div id="option">
+    <input name="updateButton" 
+                 type="button" 
+                value="Update" 
+                onclick="updateData()"
+                right="20px"
+                top="50px"/>
+</div-->
+<div id = 'myDiv'> </div>
+<select id='mySelect'></select>
+<!--form>
+  <label><input type="radio" name="mode" value="wine" checked> Wine</label>
+  
+</form-->
+<script src="d3.v2.min.js"></script>
+<script src="correlation.js"></script>
+<script src="draw.js"></script>
+<script src="./sylvester-0-1-3/sylvester.js"></script>
+<script>
+//<label><input type="radio" name="mode" value="iris">Iris</label>
+//<label><input type="radio" name="mode" value="parkinson"> Parkinson</label>
+
+var today = new Date();
+
+var day = today.getDate(),
+    month = today.getMonth()+1,
+    year = today.getFullYear();
+
+var div = document.getElementById('myDiv');
+
+div.innerHTML = 'Xiaoxin Ren <br/>' + month + '/'+ day + '/' + year;
+
+var options = ['wine', 'caltech', 'food','parkinsons', 'simplex3', 'simplex5', 'twonorm20', 'wdbc', 'wiki'];
+// 'food' and 'parkinsons' have only one cluster, not added.
+
+var width=1600,
+    height=900,
+    radius=Math.min(width,height-100)/2-70;
+
+var cellsize=30,
+    label_size=150,
+    margin=0.5;
+
+var color = d3.scale.category10();
+
+var color2 = d3.scale.linear()
+    .domain([0, 1])
+    .range(["white", "steelblue"])
+    .interpolate(d3.interpolateLab);
+
+var svg=d3.select("body").append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("transform", "translate(30,30)");
+
+var svgc=svg.append("g")
+            .attr("transform","translate(" + (width / 2 +50)+ "," + 0 + ")");
+
+var svgp=svg.append("g")
+             .attr("transform", "translate(" + (width / 4-100)+ "," + (height / 2-50 ) + ")");
+
+d3.select('#mySelect')
+  .on('change', function(){draw(this.value);})
+  .selectAll('option')
+  .data(options, function(d){return d;})
+  .enter()
+  .append('option')
+  .attr('value', function(d){return d;})
+  .text(function(d){return d;});
+
+draw('wine');
+
+</script>

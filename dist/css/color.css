@@ -1,0 +1,99 @@
+.hs-content .active-sec {
+  background: #555559 !important;
+}
+.hs-inner h2:after {
+  background: #555559;
+}
+a.hs-totop-link {
+  background: #555559;
+}
+.hs-inner .before-title {
+  color: #555559;
+}
+#header .news-scroll span {
+  color: #555559;
+}
+.tabs-left > .nav-tabs > li > a {
+  background: #555559;
+}
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+  background: #555559;
+}
+.about-section .tab-pane h4 {
+  color: #555559;
+}
+.resume-section .resume > li > .resume-tag {
+  background: #555559;
+}
+.resume-section .resume h4 {
+  color: #555559;
+}
+.bar-main-container {
+  background: #555559;
+}
+.publication-section .date {
+  background: #555559;
+}
+.publication-section .media h4 {
+  color: #555559;
+}
+.publication-detail .ext_link {
+  background: #555559;
+}
+.publication-detail .ext_link:hover {
+  color: #555559;
+}
+.team-card-container h3 {
+  color: #555559;
+}
+.team-card-container .back .social-icons a {
+  background: #555559;
+}
+.research-section .slide-header h4 {
+  color: #555559;
+}
+.research-section .slider-details {
+  background: #555559;
+}
+.teaching-section .teaching > li > .teaching-tag {
+  background: #555559;
+}
+.teaching-section .teaching h4 {
+  color: #555559;
+}
+.work_desc .ext_link {
+  background: #555559;
+}
+.work_desc .ext_link:hover {
+  color: #555559;
+}
+.contact-section #contact_form .submit_btn:hover {
+  color: #555559;
+  border: 1px solid #555559;
+}
+.contact-section .contact_info h3 {
+  color: #555559;
+}
+.pace .pace-progress {
+  background: #555559;
+}
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0.1em #555559;
+  }
+  100% {
+    box-shadow: 0 0 0 3em transparent;
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0.1em #555559;
+  }
+  100% {
+    box-shadow: 0 0 0 3em transparent;
+  }
+}
+#my-link {
+  background: #555559;
+}
