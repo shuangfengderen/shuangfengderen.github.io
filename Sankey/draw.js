@@ -30,7 +30,7 @@ function update(source){
 
 // --- Slides
 // Slides to choose how many clusters to show
-var inputg=d3.select("#input").append('div');  // change cluster number
+var inputg=d3.select("#input").append('tr');  // change cluster number
 
 // Add nodes priority
 var svg_priority = d3.select('#priority').append("svg");
@@ -136,15 +136,15 @@ function view(root, source){
   var updateProjection=drawProjection();
   drawPriority();
   addComment();
+  console.log(size[0]);
 
   function drawInputs(){
-    inputg.selectAll('g').remove();
+    inputg.selectAll('td').remove();
 
-    var input=inputg.selectAll('g')
+    var input=inputg.selectAll('td')
       .data(sankey.inputs(), function (d){ return d;})
-      .enter().append('g')
-      //.attr("class", "node")
-      .attr("transform", function(d) { return "translate(" + d.x + "," +0 + ")"; })
+      .enter().append('td');
+      //.attr("transform", function(d) { return "translate(" + d.x + "," +0 + ")"; });
 
     input.append('input')
       .attr('type','range')
@@ -152,7 +152,7 @@ function view(root, source){
       .attr('max',n_features)
       .attr('step',1)
       .attr('value',function(_,i){return n_features-levels[i];})
-      .on("input",function(_,i){d3.select(this.parentNode).select('text').text(+this.value);change(i, +this.value);})
+      .on("input",function(_,i){d3.select(this.parentNode).select('text').text(+this.value);change(i, +this.value);});
       
     input.append('text')
       .attr("transform", function(d) { return "translate(" + 0 + "," +(-10) + ")"; })
@@ -459,12 +459,12 @@ function view(root, source){
   }
 
   function addComment(){
-    chart.select("p").remove();
+    chart.select("text").remove();
     // I don't know why the newline \n doesn't take effects.
-    chart.append("p")
-        .text("\
-      1. Edge color represents different attributes;If two or more nodes have the same inside fill (not white), they belong to the same cluster through the sankey diagram.\n\r"+
-      "2. Each node is clikable: once clicked, it will be nearly invisible, and the PCA without this attribute will be shown,\nand this history position will be less visible in the background. \n"+
+    chart.append("text")
+        .text("1. 1."+
+      "Edge color represents different attributes;If two or more nodes have the same inside fill (not white), they belong to the same cluster through the sankey diagram.\n"+
+      "2. Each node is clikable: once clicked, it will become nearly invisible, and the PCA without this attribute will be shown,\nand this history position will be less visible in the background. \n"+
       "3. With mouse over the PCA projection, only newest projection will be shown, history will be invisible.\n");
   }
 

@@ -13,7 +13,7 @@
 
     <!-- CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="starter-template.css" rel="stylesheet">
+    <link href="homepage-template.css" rel="stylesheet">
     <!--link rel="stylesheet" href="dist/css/font-awesome.min.css" -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -93,24 +93,26 @@ text{
         <li ><a href="HalfCircle.html">HalfCircle</a></li>
         <li><a href="JellyFish.html">JellyFish</a></li>
         <li class = "active"><a href="Sankey.html">Sankey</a></li>
+        <li><a href="Synthetic MIR.html">Synthetic MIR</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
 
 <div class = "starter-template">
-<p style="float: left; margin-right: 20px"><select id='mySelect'> </select></p> 
-<div id='input'></div>
-<p> Descending priority (Each node with mouseover, will show title in 1 to 2 seconds):
-<p id="priority">
-<div id="chart"></div>
-<!--p id='merged'>
-<p id="projection"> &nbsp is one space </p--> 
-<script src="./Sankey/sankey.js"></script>
-<script src="./Sankey/projection.js"></script>
-<script src="./Sankey/draw.js"></script>
-</div>
+  <p style="margin-right: 20px"><select id='mySelect'> </select></p>
+  <div> Descending priority (Each node with mouseover, will show title in 1 to 2 seconds):</div>
+  <p id="priority"></p>
+  <table id='input'></table>
+  <div id="chart"></div>
 
+  <!--p id='merged'>
+  <p id="projection"> &nbsp is one space </p--> 
+  <script src="./Sankey/sankey.js"></script>
+  <script src="./Sankey/projection.js"></script>
+  <script src="./Sankey/draw.js"></script>
+
+</div>
 
 <script>
 

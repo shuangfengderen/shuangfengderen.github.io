@@ -13,7 +13,7 @@
 
     <!-- CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="starter-template.css" rel="stylesheet">
+    <link href="homepage-template.css" rel="stylesheet">
     <!--link rel="stylesheet" href="dist/css/font-awesome.min.css" -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -51,10 +51,11 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class = "active"><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="HalfCircle.html">HalfCircle</a></li>
-            <li><a href="JellyFish.html">JellyFish</a></li>
-            <li class = "active"><a href="Sankey.html">Sankey</a></li>
+            <li class = "active"><a href="JellyFish.html">JellyFish</a></li>
+            <li><a href="Sankey.html">Sankey</a></li>
+            <li><a href="Synthetic MIR.html">Synthetic MIR</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -63,7 +64,23 @@
     <div class="container">
 
       <div class="starter-template">
-      <h1>JellyFish to be edited</h1>
+      <h1>JellyFish Approach</h1>
+      <div class = "lead"> Assuming High dimensional data has m instances and n attributes (Fig. 1.a), and can be represented by a m-by-n matrix. The <b>n</b> attributes is mapped to a 2D star coordinates (Fig. 1.b) using the following metric. Here, the pair-wise coorelation (C<sub>ij</sub>) of attributes in HD space is meant to be preserved in 2D space, represented by cos(&#945<sub>ij</sub>), meaning minimizing |C<sub>ij</sub> - cos(&#945<sub>ij</sub>)|. 
+      <br>
+      <img src="images/jellyfish-star.jpg" alt= "Matrix and star coordinate" style= "padding-right: 20px">
+      <br>
+      <span style = "font-size:17px"> <i>Fig. 1: (a) HD space data represented by m-by-n matrix. (b) Each arrow in star coordinate represent an attribute.</i>  </span>
+      <br>
+      <br>
+      In the JellyFish approach, data are clustered first (say z clusters), and different optimized angles are obtained for different clusters. The final layout is like a JellyFish. A global term with weight is also added to stretch the hands of the <i> JellyFish </i>. Then final form including the local and global terms, which is to be minized, is: <br><br>
+      <img src="images/jellyfish-formula.png" alt= "Optimal function" style= "width: 60%; height: 60%; padding-right: 20px">
+      <br>
+      <br>
+      Here, the subscript i denotes cluster number; j and k denotes attribute number. This term is then optimized/minimized using one quasi Newton's method, the BFGS method. The JellyFish layout with different global weight term is shown in Fig. 2. Data used in this figure is the <a href = "https://archive.ics.uci.edu/ml/datasets/Wine">Wine Dataset from UCI Machine Learning Repository</a>. The data has 13 attributes and partitioned into 3 clusters using t-SNE. <br>
+      <br>
+      <img src="images/jellyfish-wine.png" alt= "JellyFish Wine" style= "padding-right: 20px">
+      <br> <br>
+      Due to non-efficiency the optimization method, this approach is not integrated as a web application. Instead, its similar but briefer version without using iterative optimization method is presented in <a href = "http://shuangfengderen.github.io/HalfCircle.html">HalfCircle</a>.
       </div>
 
     </div><!-- /.container -->
