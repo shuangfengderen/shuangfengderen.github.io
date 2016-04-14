@@ -3,7 +3,7 @@
 
 // ---- Dataset selection and update
 // 'food' and 'parkinsons' have only one cluster, not added.
-var options = ["wine",'images','caltech-s6o4','caltech','simplex3','simplex5','twonorm20','wdbc','wiki']
+var options = ["wine",'caltech','simplex3','simplex5','twonorm20','images','wdbc','caltech-s6o4']
 
 // my select is the selection of dataset.
 d3.select('#mySelect')
